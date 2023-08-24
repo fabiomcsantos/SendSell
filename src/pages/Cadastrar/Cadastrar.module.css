@@ -1,0 +1,27 @@
+
+.form {
+    background-color: #dadada;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 16px;
+}
+
+.Label {
+    margin-right: 16px;
+}
+
+.booksFormGroup {
+ text-align: justify;
+ padding: 16px;
+ 
+}
+
+.Input{
+    width: 500px;
+    height: 20px;
+    border-radius: 5px;
+}

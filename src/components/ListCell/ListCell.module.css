@@ -1,10 +1,13 @@
 
-h3 {
+.titleH3 {
     color: #414141;
+    font-size: 20px;
   }
   
-  h5 {
+ .titleH5 {
     color: #757575;
+    font-size: 14px;
+
   }
   
   .content {
@@ -14,13 +17,13 @@ h3 {
     align-items: center;
     background-color: #ffffff;
     width: 800px;
-    height: 380px;
+    height: 400px;
     margin: 8px;
     border-radius: 10px;
     
   }
   
-  img {
+  .imagens {
     max-width: 250px;
     text-align: center;
   }
@@ -34,7 +37,7 @@ h3 {
     margin-left: 16px;
   }
   
-  button {
+  .botao {
     margin: 8px;
     color: #2c5e59;
     background-color: #8abbb6;
@@ -44,7 +47,7 @@ h3 {
     border: #2c5e59;
   }
   
-  button:hover {
+  .botao:hover {
     color: #5f2e1a;
     background-color: #ad6c52;
     border: #5f2e1a;
