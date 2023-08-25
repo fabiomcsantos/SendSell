@@ -1,10 +1,10 @@
 
-h3 {
+  .TitleH3 {
     color: #414141;
     font-size: 14px;
   }
   
-  h5 {
+  .TitleH5 {
     color: #757575;
     font-size: 10px;
   }
@@ -22,7 +22,7 @@ h3 {
     
   }
   
-  img {
+  .Img {
     max-width: 150px;
     text-align: center;
     margin-left: 32px;
@@ -37,7 +37,7 @@ h3 {
     margin-left: 16px;
   }
   
-  button {
+  .Button {
     margin: 8px;
     color: #2c5e59;
     background-color: #8abbb6;
@@ -45,11 +45,21 @@ h3 {
     width: 100px;
     height: 25px;
     border: #2c5e59;
+    cursor: pointer;
   }
   
-  button:hover {
+  Button:hover {
     color: #5f2e1a;
     background-color: #ad6c52;
     border: #5f2e1a;
+    cursor: pointer;
   }
   
+  a{
+    text-decoration: none;
+    color: #2c5e59;
+  }
+
+  a:hover {
+    color: #5f2e1a;
+  }

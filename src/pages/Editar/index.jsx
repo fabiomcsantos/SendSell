@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import api from '../../services/api';
-import { useNavigate } from 'react-router-dom';
-import styles from './Cadastrar.module.css'
+import { useNavigate, useParams } from "react-router-dom";
+import styles from './Editar.module.css'
 
 const initialValue = {
     title: '',
@@ -11,32 +11,44 @@ const initialValue = {
 };
 
 
-function Cadastrar (){
+function Editar (){
 
     const [values, setValues] = useState(initialValue);
 
     const navigate = useNavigate();
-    
+
+    const {id} = useParams();
+
+    const url = `/celulares/${id}`;
+
+    useEffect( () => {
+        if (id){
+            api.get(url)
+                .then( (response) => {
+                    setValues(response.data)
+                })
+        }
+},[])
+
     function onSubmit(evento){
         evento.preventDefault(); // não executa o comportamento default do formulário (o recarregar a página)
 
-        const url = '/celulares';
-
-    api.post(url, values).then( () => {
-        navigate('/');
-    })
-};
+        api.put(url, values)
+            .then( () => {
+                navigate('/administrar');
+            })
+    }
 
     function onChange(ev){
         const {name, value} = ev.target
-        console.log({name, value});
+        // console.log({name, value});
 
         setValues({... values,[name]:value})
     }
 
     return(
         <>
-        <h1>Cadastrar</h1>
+        <h1>Editar</h1>
         <div className={styles.form}>
         <form onSubmit={onSubmit}>
             <div className={styles.booksFormGroup}>
@@ -62,4 +74,4 @@ function Cadastrar (){
     )
 }
 
-export default Cadastrar;
+export default Editar;

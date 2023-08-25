@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ListControle from '../../components/ListControle'
 import styles from '../Controle/Controle.module.css';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
+
+
 
 
 function App() {
@@ -45,7 +48,7 @@ function App() {
           value={search}
           onChange={(ev) => setSearch(ev.target.value)}
         />
-          <a className={styles.botao} href="#"><button>Cadastrar</button></a>
+          <button className={styles.Button}><Link to={'/administrar/cadastrar'}> Cadastrar</Link></button>
         {
           celulares.map(celular => {
             return (<ListControle
