@@ -5,6 +5,9 @@ import styles from './Editar.module.css'
 
 const initialValue = {
     title: '',
+    marca: '',
+    modelo: '',
+    sistema: '',
     image: '',
     price: 0,
     url: '',
@@ -35,7 +38,7 @@ function Editar (){
 
         api.put(url, values)
             .then( () => {
-                navigate('/administrar');
+                navigate('/controle');
             })
     }
 
@@ -52,20 +55,32 @@ function Editar (){
         <div className={styles.form}>
         <form onSubmit={onSubmit}>
             <div className={styles.booksFormGroup}>
-                <label className={styles.Label} htmlFor="title">Titulo</label>
-                <input className={styles.Input} type="text" id="title" name="title" onChange={onChange} />
+            <label className={styles.Label} htmlFor="title">Titulo</label>
+                <input className={styles.Input} type="text" id="title" name="title" value={values.title} onChange={onChange} />
             </div>
             <div className={styles.booksFormGroup}>
-                <label className={styles.Label} htmlFor="url">Url do Livro</label>
-                <input className={styles.Input} type="text" id="url" name="url" onChange={onChange} />
+                <label className={styles.Label} htmlFor="marca">Marca</label>
+                <input className={styles.Input} type="text" id="marca" name="marca" value={values.marca} onChange={onChange} />
+            </div>
+            <div className={styles.booksFormGroup}>
+                <label className={styles.Label} htmlFor="modelo">Modelo</label>
+                <input className={styles.Input} type="text" id="modelo" name="modelo" value={values.modelo} onChange={onChange} />
+            </div>
+            <div className={styles.booksFormGroup}>
+                <label className={styles.Label} htmlFor="sistema">Sistema</label>
+                <input className={styles.Input} type="text" id="sistema" name="sistema" value={values.sistema} onChange={onChange} />
+            </div>
+            <div className={styles.booksFormGroup}>
+                <label className={styles.Label} htmlFor="url">Url do Celular</label>
+                <input className={styles.Input} type="text" id="url" name="url" value={values.url} onChange={onChange} />
             </div>
             <div className={styles.booksFormGroup}>
                 <label className={styles.Label} htmlFor="image">Url/Imagem</label>
-                <input className={styles.Input} type="text" id="image" name="image" onChange={onChange} />
+                <input className={styles.Input} type="text" id="image" name="image" value={values.image} onChange={onChange} />
             </div>
             <div className={styles.booksFormGroup}>
                 <label className={styles.Label} htmlFor="price">Preço</label>
-                <input className={styles.Input} type="text" id="price" name="price" onChange={onChange} />
+                <input className={styles.Input} type="text" id="price" name="price" value={values.price} onChange={onChange} />
             </div>
             <button className={styles.Button} type="submit">Salvar</button>
         </form>

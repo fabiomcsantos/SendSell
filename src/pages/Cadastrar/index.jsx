@@ -5,6 +5,9 @@ import styles from './Cadastrar.module.css'
 
 const initialValue = {
     title: '',
+    marca: '',
+    modelo: '',
+    sistema: '',
     image: '',
     price: 0,
     url: '',
@@ -44,7 +47,19 @@ function Cadastrar (){
                 <input className={styles.Input} type="text" id="title" name="title" onChange={onChange} />
             </div>
             <div className={styles.booksFormGroup}>
-                <label className={styles.Label} htmlFor="url">Url do Livro</label>
+                <label className={styles.Label} htmlFor="marca">Marca</label>
+                <input className={styles.Input} type="text" id="marca" name="marca" onChange={onChange} />
+            </div>
+            <div className={styles.booksFormGroup}>
+                <label className={styles.Label} htmlFor="modelo">Modelo</label>
+                <input className={styles.Input} type="text" id="modelo" name="modelo" onChange={onChange} />
+            </div>
+            <div className={styles.booksFormGroup}>
+                <label className={styles.Label} htmlFor="sistema">Sistema</label>
+                <input className={styles.Input} type="text" id="sistema" name="sistema" onChange={onChange} />
+            </div>
+            <div className={styles.booksFormGroup}>
+                <label className={styles.Label} htmlFor="url">Url do Celular</label>
                 <input className={styles.Input} type="text" id="url" name="url" onChange={onChange} />
             </div>
             <div className={styles.booksFormGroup}>
